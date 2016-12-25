@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -48,7 +49,7 @@ int main() {
             cin >> xpPerProduct1;
             cout << "Finally, what's the experience per hour?\n";
             cin >> xpPerHour1;
-            moneyCostPerHour1 = (xpPerHour1*costOfProduct1)/xpPerProduct1;
+            moneyCostPerHour1 = xpPerHour1*costOfProduct1/xpPerProduct1;
             cout << "Money cost per hour: " << moneyCostPerHour1 << endl;
         } else;
         cout << "Now tell me the experience per hour of your method\n";
@@ -69,7 +70,7 @@ int main() {
             cin >> xpPerProduct1;
             cout << "Finally, what's the experience per hour?\n";
             cin >> xpPerHour1;
-            moneyCostPerHour1 = (xpPerHour1*costOfProduct1)/xpPerProduct1;
+            moneyCostPerHour1 = xpPerHour1*costOfProduct1/xpPerProduct1;
             cout << "Money cost per hour: " << moneyCostPerHour1 << endl;
         } else;
         cout << "Now tell me the experience per hour of your method\n";
@@ -98,8 +99,8 @@ int main() {
             cin >> xpPerProduct1;
             cout << "Finally, what's the experience per hour?\n";
             cin >> xpPerHour1;
-            moneyCostPerHour1 = -(xpPerHour1*costOfProduct1)/xpPerProduct1;
-            cout << "Money cost per hour: " << -moneyCostPerHour1 << endl;
+            moneyCostPerHour1 = xpPerHour1*costOfProduct1/xpPerProduct1;
+            cout << "Money cost per hour: " << moneyCostPerHour1 << endl;
         } else;
         cout << "Now tell me the experience per hour of your method\n";
         cin >> xpPerHour1;
@@ -117,14 +118,13 @@ int main() {
             cin >> xpPerProduct2;
             cout << "Finally, what's the experience per hour?\n";
             cin >> xpPerHour2;
-            moneyCostPerHour2 = -(xpPerHour2*costOfProduct2)/xpPerProduct2;
-            cout << "Money cost per hour: " << -moneyCostPerHour2 << endl;
+            moneyCostPerHour2 = xpPerHour2*costOfProduct2/xpPerProduct2;
+            cout << "Money cost per hour: " << moneyCostPerHour2 << endl;
         } else;
         cout << "Now tell me the experience per hour of your method\n";
         cin >> xpPerHour2;
         moneyPerHourNeededForEfficiency = ((moneyCostPerHour1*xpPerHour2)-(moneyCostPerHour2*xpPerHour1))/(xpPerHour2-xpPerHour1);
-        cout << "\nHere is how much money you'll need to make per hour for the second, more expensive method to be more efficient: " << moneyPerHourNeededForEfficiency << endl;
-        cout << "If the number is negative, it means you put the more expensive method first. The number is still correct, however; just remove the negative sign.\n";
+        cout << "\nHere is how much money you'll need to make per hour for the more expensive method to be more efficient: " << fabs(moneyPerHourNeededForEfficiency) << endl;
     }
     return 0;
 }
